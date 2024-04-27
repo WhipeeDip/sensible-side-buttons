@@ -446,7 +446,7 @@ typedef NS_ENUM(NSInteger, MenuItem) {
     
     NSString* appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
     NSString* appDescription = [NSString stringWithFormat:@"%@ %@", appName, [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    NSString* copyright = @"Copyright © 2018 Alexei Baboulevitch.";
+    NSString* copyright = @"Copyright © 2021 Alexei Baboulevitch & Elliot Yoon.";
     
     switch (menuMode) {
         case MenuModeAccessibility: {
@@ -461,7 +461,7 @@ typedef NS_ENUM(NSInteger, MenuItem) {
             [self.text.textStorage setAttributedString:string];
         } break;
         case MenuModeDonation: {
-            NSString* text = [NSString stringWithFormat:@"Thanks for using %@!\nIf you find this utility useful, please consider making a purchase through the Amazon affiliate link on the website below. It won't cost you an extra cent! 😊", appDescription];
+            NSString* text = [NSString stringWithFormat:@"Thanks for using %@!\n", appDescription];
             
             NSMutableAttributedString* string = [[NSMutableAttributedString alloc] initWithString:text attributes:regularAttributes];
             [string addAttribute:NSFontAttributeName value:boldFont range:[text rangeOfString:appDescription]];
